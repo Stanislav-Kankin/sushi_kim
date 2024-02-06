@@ -4,7 +4,7 @@ from telegram.ext import (
 )
 
 from lib.config import TOKEN
-from bot.bot_utils import hello_user
+from bot_utils import hello_user
 from pars.pars_main import create_user_text
 
 
