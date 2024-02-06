@@ -3,9 +3,9 @@ from telegram.ext import (
     CommandHandler, Filters
 )
 
-from config import TOKEN
-from bot_utils import hello_user
-from pars_main import create_user_text
+from lib.config import TOKEN
+from bot.bot_utils import hello_user
+from pars.pars_main import create_user_text
 
 
 def start_bot() -> None:
