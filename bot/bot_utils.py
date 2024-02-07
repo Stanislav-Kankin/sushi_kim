@@ -3,8 +3,10 @@ from pars.pars_main import create_user_text
 
 
 def hello_user(update, context):
+    name = update.message.from_user.first_name
     update.message.reply_text(
-        'Hello', reply_markup=main_keyboard()
+        f'Привет, {name}, приятного использования!',
+        reply_markup=main_keyboard()
     )
 
 
