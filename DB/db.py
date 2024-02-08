@@ -3,7 +3,6 @@ from sqlalchemy import(
     String, Integer
 )
 from sqlalchemy.orm import declarative_base, Session
-# from bot.lib.config import SQLITE_PATH
 
 engine = create_engine('sqlite:///my_db_kim.db')
 session = Session(bind=engine)
