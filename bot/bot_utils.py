@@ -5,7 +5,7 @@ from pars.pars_main import (
     ) 
 
 
-def hello_user(update, context) - None:
+def hello_user(update, context) -> None:
     # Приветствуем пользователя по имени
     name = update.message.from_user.first_name
     update.message.reply_text(
