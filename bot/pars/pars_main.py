@@ -32,8 +32,3 @@ def create_link() -> list:
     # добавляем в список ссылки
     for link in links:
         link_list.append(link.get("href"))
-
-
-
-
-
