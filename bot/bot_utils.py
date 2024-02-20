@@ -1,5 +1,5 @@
 from telegram import ReplyKeyboardMarkup
-from pars.pars_main import (
+from DB.pars_main import (
     create_link, create_name, create_price,
     link_list, names_list, price_list
     )
