@@ -2,18 +2,12 @@ import requests
 
 from bs4 import BeautifulSoup
 
-# headers = {
-#    """User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_3_1)
-# AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"""
-# }
-
 suhi_kim_url = ("https://sushikim.ru/sety-rollov")
 response = requests.get(suhi_kim_url).text
 
 soup = BeautifulSoup(response, "html.parser")  # html.parser
 
 data_name = soup.find_all("div", class_="rm-module-title")
-# собрал в кучу блок с названием
 data_price = soup.find_all("span", class_="rm-module-price")
 
 names_list = []  # названия сетов
@@ -38,15 +32,3 @@ def create_link() -> list:
     # добавляем в список ссылки
     for link in links:
         link_list.append(link.get("href"))
-
-
-def create_user_text(update, context) -> None:
-    create_name()
-    create_price()
-    create_link()
-    if len(names_list) == len(price_list) == len(link_list):
-        for i in range(len(names_list)):
-            update.message.reply_text(
-                f'ссылка на товар - {link_list[i]}\n'
-                f'Сет {names_list[i]} по цене {price_list[i]}'
-            )
